@@ -4,13 +4,37 @@
       "id": 1,
       "title": "Create new homepage banner",
       "details": "Use new images and different color pallete",
-      "complete": true
+      "complete": false
     },
     {
       "id": 2,
       "title": "Add AboutUs page",
       "details": "Insert preformatted text and new images",
-      "complete": false
+      "complete": true
+    },
+    {
+      "title": "Product DNA",
+      "details": "Update Footer",
+      "complete": false,
+      "id": 3
+    },
+    {
+      "title": "Vcars",
+      "details": "Design wireframe for the desktop homepage",
+      "complete": false,
+      "id": 4
+    },
+    {
+      "title": "Refresh design on your portfolio",
+      "details": "Portfolio design update and refresh\n",
+      "complete": false,
+      "id": 5
+    },
+    {
+      "title": "Create blogsite for Paula",
+      "details": "Designe, code and publish blog site about science, boarding and fun stuff.",
+      "complete": false,
+      "id": 6
     }
   ]
 }

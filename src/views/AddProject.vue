@@ -2,7 +2,7 @@
 	<form @submit.prevent="handleSubmit">
 		<label>Title:</label>
 		<input type="text" required v-model="title" />
-		<label for="">Details:</label>
+		<label>Details:</label>
 		<textarea required v-model="details"></textarea>
 		<button>Add Project</button>
 	</form>
@@ -18,7 +18,22 @@ export default {
 	},
 	methods: {
 		handleSubmit() {
-			console.log(this.title, this.details);
+			let project = {
+				title: this.title,
+				details: this.details,
+				complete: false,
+			};
+			fetch("http://localhost:3000/projects", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(project),
+			})
+				.then(() => {
+					this.$router.push({ name: "Home" });
+				})
+				.catch((err) => {
+					console.log(err.message);
+				});
 		},
 	},
 };
