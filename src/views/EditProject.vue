@@ -1,6 +1,6 @@
 <template>
 	<h1>Edit Project {{ $route.id }}</h1>
-	<form>
+	<form @submit.prevent="handleEdit">
 		<label>Title:</label>
 		<input type="text" required v-model="title" />
 		<label>Details:</label>
@@ -18,6 +18,24 @@ export default {
 			details: "",
 			uri: "http://localhost:3000/projects/" + this.id,
 		};
+	},
+	methods: {
+		handleEdit() {
+			fetch(this.uri, {
+				method: "PATCH",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({
+					title: this.title,
+					details: this.details,
+				}),
+			})
+				.then(() => {
+					this.$router.push({ name: "Home" });
+				})
+				.catch((err) => {
+					console.log(err.message);
+				});
+		},
 	},
 	mounted() {
 		fetch(this.uri)
