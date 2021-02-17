@@ -33,17 +33,13 @@ export default {
 	},
 	computed: {
 		filteredProjects() {
-			if (this.current === "all") {
-				return this.projects;
-			} else if (this.current === "ongoing") {
-				return this.projects.filter((project) => {
-					return project.complete === false;
-				});
-			} else {
-				return this.projects.filter((project) => {
-					return project.complete === true;
-				});
+			if (this.current === "completed") {
+				return this.projects.filter((project) => project.complete);
 			}
+			if (this.current === "ongoing") {
+				return this.projects.filter((project) => !project.complete);
+			}
+			return this.projects;
 		},
 	},
 	methods: {

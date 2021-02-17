@@ -10,7 +10,7 @@
       "id": 2,
       "title": "Add About page",
       "details": "Insert preformatted text and new images",
-      "complete": false
+      "complete": true
     },
     {
       "title": "Product DNA - assignement",
@@ -27,7 +27,7 @@
     {
       "title": "Refresh design on your portfolio",
       "details": "Portfolio design update and refresh\n",
-      "complete": true,
+      "complete": false,
       "id": 5
     },
     {
